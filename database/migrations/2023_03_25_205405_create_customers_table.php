@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('uuid')->unique();
             $table->string('name')->nullable();
             $table->string('email')->nullable();
-            $table->string('phone_number');
+            $table->string('phone_number')->unique();
             $table->string('otp')->nullable();
             $table->string('otp_verified_at')->nullable();
             $table->unsignedInteger('payout_method')->nullable();
