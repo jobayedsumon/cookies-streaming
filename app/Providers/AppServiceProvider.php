@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use Filament\Facades\Filament;
+use Filament\Navigation\NavigationItem;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -11,7 +13,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        //
+
     }
 
     /**
@@ -19,6 +21,12 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        Filament::registerNavigationGroups([
+            'Users',
+            'Customers',
+            'Cookie Packages',
+            'Transactions',
+        ]);
+
     }
 }

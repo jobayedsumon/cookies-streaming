@@ -16,7 +16,7 @@ class AuthController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth:api', ['except' => ['login']]);
+        $this->middleware('auth:api', ['except' => ['login', 'verify_otp']]);
     }
 
     /**
@@ -39,7 +39,7 @@ class AuthController extends Controller
             $customer->otp_verified_at = null;
             $customer->save();
         } else {
-            $customer = Customer::create([
+            Customer::create([
                 'uuid' => Str::uuid(),
                 'phone_number' => $phone_number,
                 'otp' => $otp,
@@ -51,10 +51,12 @@ class AuthController extends Controller
 
         if (send_sms($phone_number, $text)) {
             return response()->json([
+                'success' => true,
                 'message' => 'OTP sent successfully',
             ], 200);
         } else {
             return response()->json([
+                'success' => false,
                 'message' => 'OTP sending failed',
             ], 500);
         }
@@ -62,14 +64,16 @@ class AuthController extends Controller
 
     public function verify_otp(Request $request)
     {
+        $phone_number =  $request->input('phone_number');
         $otp =  $request->input('otp');
 
-        $customer = $this->guard()->user();
+        $customer = Customer::where('phone_number', $phone_number)->first();
 
         if($customer) {
 
             if($customer->otp == $otp) {
 
+                $customer->otp = null;
                 $customer->otp_verified_at = now();
                 $customer->save();
 
@@ -79,13 +83,15 @@ class AuthController extends Controller
 
             } else {
                 return response()->json([
+                    'success' => false,
                     'message' => 'OTP verification failed',
-                ], 500);
+                ]);
             }
         } else {
             return response()->json([
+                'success' => false,
                 'message' => 'OTP verification failed',
-            ], 500);
+            ]);
         }
     }
 
@@ -96,7 +102,11 @@ class AuthController extends Controller
      */
     public function me()
     {
-        return response()->json($this->guard()->user());
+        return response()->json(
+            ['success' => true,
+                'user' => $this->guard()->user()]
+
+        );
     }
 
     /**
@@ -108,7 +118,10 @@ class AuthController extends Controller
     {
         $this->guard()->logout();
 
-        return response()->json(['message' => 'Successfully logged out']);
+        return response()->json([
+            'success' => true,
+            'message' => 'Successfully logged out'
+        ]);
     }
 
     /**
@@ -131,6 +144,7 @@ class AuthController extends Controller
     protected function respondWithToken($token)
     {
         return response()->json([
+            'success' => true,
             'access_token' => $token,
             'token_type' => 'bearer',
             'expires_in' => $this->guard()->factory()->getTTL() * 60,

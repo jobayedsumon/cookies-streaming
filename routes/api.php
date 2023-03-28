@@ -29,3 +29,15 @@ Route::group([
     Route::post('verify-otp', 'AuthController@verify_otp');
 
 });
+
+Route::group([
+
+    'middleware' => 'api',
+    'namespace' => 'App\Http\Controllers',
+    'prefix' => 'customer'
+
+], function ($router) {
+
+    Route::post('update', 'CustomerController@update');
+
+});

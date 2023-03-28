@@ -11,12 +11,7 @@ class Customer extends Authenticatable implements JWTSubject
 {
     use HasFactory;
 
-    protected $fillable = [
-        'uuid',
-        'phone_number',
-        'otp',
-        'otp_verified_at',
-    ];
+    protected $guarded = [];
 
     public function getJWTIdentifier()
     {
