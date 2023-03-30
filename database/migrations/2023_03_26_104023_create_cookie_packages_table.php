@@ -13,8 +13,7 @@ return new class extends Migration
     {
         Schema::create('cookie_packages', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('cookies');
-            $table->unsignedBigInteger('price');
+            $table->unsignedBigInteger('sku_id');
             $table->timestamps();
         });
     }

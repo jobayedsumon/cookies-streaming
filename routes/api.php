@@ -41,3 +41,27 @@ Route::group([
     Route::post('update', 'CustomerController@update');
 
 });
+
+Route::group([
+
+    'middleware' => 'api',
+    'namespace' => 'App\Http\Controllers',
+    'prefix' => 'cookie'
+
+], function ($router) {
+
+    Route::get('packages', 'CookieController@packages');
+
+});
+
+Route::group([
+
+    'middleware' => 'api',
+    'namespace' => 'App\Http\Controllers',
+    'prefix' => 'transaction'
+
+], function ($router) {
+
+    Route::post('create', 'TransactionController@create');
+
+});

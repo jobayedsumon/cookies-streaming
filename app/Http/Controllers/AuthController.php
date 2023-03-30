@@ -40,7 +40,7 @@ class AuthController extends Controller
             $customer->save();
         } else {
             Customer::create([
-                'uuid' => Str::uuid(),
+                'uuid' => Str::random(10),
                 'phone_number' => $phone_number,
                 'otp' => $otp,
                 'otp_verified_at' => null,

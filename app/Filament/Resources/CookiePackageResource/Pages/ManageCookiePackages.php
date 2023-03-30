@@ -4,9 +4,9 @@ namespace App\Filament\Resources\CookiePackageResource\Pages;
 
 use App\Filament\Resources\CookiePackageResource;
 use Filament\Pages\Actions;
-use Filament\Resources\Pages\ListRecords;
+use Filament\Resources\Pages\ManageRecords;
 
-class ListCookiePackages extends ListRecords
+class ManageCookiePackages extends ManageRecords
 {
     protected static string $resource = CookiePackageResource::class;
 

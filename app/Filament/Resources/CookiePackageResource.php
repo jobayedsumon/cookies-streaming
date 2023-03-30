@@ -23,9 +23,7 @@ class CookiePackageResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('cookies')
-                    ->required(),
-                Forms\Components\TextInput::make('price')
+                Forms\Components\TextInput::make('sku_id')
                     ->required(),
             ]);
     }
@@ -34,8 +32,7 @@ class CookiePackageResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('cookies'),
-                Tables\Columns\TextColumn::make('price'),
+                Tables\Columns\TextColumn::make('sku_id'),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime(),
                 Tables\Columns\TextColumn::make('updated_at')
@@ -46,25 +43,17 @@ class CookiePackageResource extends Resource
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\DeleteBulkAction::make(),
             ]);
     }
     
-    public static function getRelations(): array
-    {
-        return [
-            //
-        ];
-    }
-    
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListCookiePackages::route('/'),
-            'create' => Pages\CreateCookiePackage::route('/create'),
-            'edit' => Pages\EditCookiePackage::route('/{record}/edit'),
+            'index' => Pages\ManageCookiePackages::route('/'),
         ];
     }    
 }
