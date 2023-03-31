@@ -62,6 +62,7 @@ Route::group([
 
 ], function ($router) {
 
+    Route::post('/', 'TransactionController@index');
     Route::post('create', 'TransactionController@create');
 
 });

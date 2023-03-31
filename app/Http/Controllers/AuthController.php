@@ -143,9 +143,12 @@ class AuthController extends Controller
      */
     protected function respondWithToken($token)
     {
+        $balance = $this->guard()->user()->balance();
+
         return response()->json([
             'success' => true,
             'access_token' => $token,
+            'balance' => $balance,
             'token_type' => 'bearer',
             'expires_in' => $this->guard()->factory()->getTTL() * 60,
         ], 200);

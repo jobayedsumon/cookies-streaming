@@ -8,6 +8,22 @@ use Illuminate\Support\Str;
 
 class TransactionController extends Controller
 {
+
+    public function index()
+    {
+        $customer = auth('api')->user();
+
+        $transactions = $customer->transactions()->orderBy('created_at', 'desc')->get();
+
+        $total_withdrawal = $transactions->where('type', 2)->where('status', 4)->sum('cookies');
+
+        return response()->json([
+            'success' => true,
+            'message' => 'Transactions retrieved successfully',
+            'transactions' => $transactions,
+            'total_withdrawal' => $total_withdrawal,
+        ], 200);
+    }
     public function create(Request $request)
     {
         $customer = auth('api')->user();

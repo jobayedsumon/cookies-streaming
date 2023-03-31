@@ -27,4 +27,12 @@ class Customer extends Authenticatable implements JWTSubject
     {
         return $this->hasMany(Transaction::class);
     }
+
+    public function balance()
+    {
+        $total_deposit = $this->transactions()->where('type', 1)->where('status', 4)->sum('cookies');
+        $total_withdrawal = $this->transactions()->where('type', 2)->where('status', 4)->sum('cookies');
+
+        return $total_deposit - $total_withdrawal;
+    }
 }
