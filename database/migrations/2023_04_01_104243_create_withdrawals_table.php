@@ -11,13 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('transactions', function (Blueprint $table) {
+        Schema::create('withdrawals', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('customer_id');
             $table->foreign('customer_id')->references('id')->on('customers');
+            $table->unsignedInteger('payout_method');
+            $table->string('payout_id');
+            $table->string('beneficiary_name');
             $table->unsignedDouble('cookies');
-            $table->unsignedInteger('type');
-            $table->unsignedInteger('status');
+            $table->unsignedInteger('status')->default(1);
             $table->timestamps();
         });
     }
@@ -27,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('transactions');
+        Schema::dropIfExists('withdrawals');
     }
 };

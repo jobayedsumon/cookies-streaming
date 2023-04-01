@@ -14,11 +14,10 @@ return new class extends Migration
         Schema::create('customers', function (Blueprint $table) {
             $table->id();
             $table->string('uuid')->unique();
+            $table->string('email')->unique();
             $table->string('name')->nullable();
-            $table->string('email')->nullable();
-            $table->string('phone_number')->unique();
-            $table->string('otp')->nullable();
-            $table->string('otp_verified_at')->nullable();
+            $table->string('image')->nullable();
+            $table->string('phone_number')->nullable();
             $table->unsignedInteger('payout_method')->nullable();
             $table->string('beneficiary_name')->nullable();
             $table->string('payout_id')->nullable();

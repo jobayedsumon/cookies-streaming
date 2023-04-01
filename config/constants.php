@@ -13,4 +13,9 @@ return [
         3 => 'Cancelled',
         4 => 'Completed',
     ],
+
+    'payout_method' => [
+        1 => 'Paypal',
+        2 => 'Tether (USDT) - Binance.com',
+    ],
 ];

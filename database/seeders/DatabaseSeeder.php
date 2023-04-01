@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\CookiePackage;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -12,11 +14,18 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // \App\Models\User::factory(10)->create();
+        $admin = new User();
+        $admin->name = 'Admin';
+        $admin->email = 'admin@cookies';
+        $admin->password = bcrypt('cookies');
+        $admin->save();
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        $cookies = [25, 60, 90, 120, 300, 600, 1200, 3000];
+
+        foreach ($cookies as $cookie) {
+            CookiePackage::create([
+                'sku_id' => $cookie,
+            ]);
+        }
     }
 }

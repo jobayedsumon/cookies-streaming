@@ -26,20 +26,19 @@ class CustomerResource extends Resource
                 Forms\Components\TextInput::make('uuid')
                     ->required()
                     ->maxLength(255),
-                Forms\Components\TextInput::make('name')
-                    ->maxLength(255),
                 Forms\Components\TextInput::make('email')
                     ->email()
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('phone_number')
-                    ->tel()
                     ->required()
                     ->maxLength(255),
-                Forms\Components\TextInput::make('otp')
+                Forms\Components\TextInput::make('name')
                     ->maxLength(255),
-                Forms\Components\TextInput::make('otp_verified_at')
+                Forms\Components\FileUpload::make('image')->image(),
+                Forms\Components\TextInput::make('phone_number')
+                    ->tel()
                     ->maxLength(255),
-                Forms\Components\TextInput::make('payout_method'),
+                Forms\Components\Select::make('payout_method')
+                    ->options(config('constants.payout_method'))
+                    ->required(),
                 Forms\Components\TextInput::make('beneficiary_name')
                     ->maxLength(255),
                 Forms\Components\TextInput::make('payout_id')
@@ -52,12 +51,13 @@ class CustomerResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('uuid'),
-                Tables\Columns\TextColumn::make('name'),
                 Tables\Columns\TextColumn::make('email'),
+                Tables\Columns\TextColumn::make('name'),
+                Tables\Columns\ImageColumn::make('image'),
                 Tables\Columns\TextColumn::make('phone_number'),
-                Tables\Columns\TextColumn::make('otp'),
-                Tables\Columns\TextColumn::make('otp_verified_at'),
-                Tables\Columns\TextColumn::make('payout_method'),
+                Tables\Columns\TextColumn::make('payout_method')->enum(
+                    config('constants.payout_method')
+                ),
                 Tables\Columns\TextColumn::make('beneficiary_name'),
                 Tables\Columns\TextColumn::make('payout_id'),
                 Tables\Columns\TextColumn::make('created_at')
@@ -66,7 +66,6 @@ class CustomerResource extends Resource
                     ->dateTime(),
             ])
             ->filters([
-                //
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
@@ -75,14 +74,14 @@ class CustomerResource extends Resource
                 Tables\Actions\DeleteBulkAction::make(),
             ]);
     }
-    
+
     public static function getRelations(): array
     {
         return [
             //
         ];
     }
-    
+
     public static function getPages(): array
     {
         return [
@@ -90,5 +89,5 @@ class CustomerResource extends Resource
             'create' => Pages\CreateCustomer::route('/create'),
             'edit' => Pages\EditCustomer::route('/{record}/edit'),
         ];
-    }    
+    }
 }

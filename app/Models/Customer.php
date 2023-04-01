@@ -13,6 +13,8 @@ class Customer extends Authenticatable implements JWTSubject
 
     protected $guarded = [];
 
+    protected $appends = ['balance'];
+
     public function getJWTIdentifier()
     {
         return $this->getKey();
@@ -23,16 +25,26 @@ class Customer extends Authenticatable implements JWTSubject
         return [];
     }
 
-    public function transactions()
+    public function deposits()
     {
-        return $this->hasMany(Transaction::class);
+        return $this->hasMany(Deposit::class);
+    }
+
+    public function withdrawals()
+    {
+        return $this->hasMany(Withdrawal::class);
     }
 
     public function balance()
     {
-        $total_deposit = $this->transactions()->where('type', 1)->where('status', 4)->sum('cookies');
-        $total_withdrawal = $this->transactions()->where('type', 2)->where('status', 4)->sum('cookies');
+        $total_deposits = $this->deposits()->where('status', 4)->sum('cookies');
+        $total_withdrawals = $this->withdrawals()->where('status', 4)->sum('cookies');
 
-        return $total_deposit - $total_withdrawal;
+        return $total_deposits - $total_withdrawals;
+    }
+
+    public function getBalanceAttribute()
+    {
+        return $this->balance();
     }
 }

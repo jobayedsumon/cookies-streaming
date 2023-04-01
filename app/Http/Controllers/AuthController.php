@@ -28,38 +28,29 @@ class AuthController extends Controller
      */
     public function login(Request $request)
     {
-        $phone_number =  $request->input('phone_number');
+        $uuid = $request->input('uuid');
+        $email = $request->input('email');
+        $name = $request->input('name');
+        $image = $request->input('image');
 
-        $customer = Customer::where('phone_number', $phone_number)->first();
+        $customer = Customer::where('uuid', $uuid)->orWhere('email', $email)->first();
 
-        $otp = rand(1000, 9999);
+        if (!$customer) {
 
-        if($customer) {
-            $customer->otp = $otp;
-            $customer->otp_verified_at = null;
+            $customer = new Customer();
+
+            $customer->name = $name;
+            $customer->uuid = $uuid;
+            $customer->email = $email;
+            $customer->image = $image;
+
             $customer->save();
-        } else {
-            Customer::create([
-                'uuid' => Str::random(10),
-                'phone_number' => $phone_number,
-                'otp' => $otp,
-                'otp_verified_at' => null,
-            ]);
         }
 
-        $text = 'Your '.env('APP_NAME').' OTP Code is ' . $otp;
+        $token = $this->guard()->login($customer);
 
-        if (send_sms($phone_number, $text)) {
-            return response()->json([
-                'success' => true,
-                'message' => 'OTP sent successfully',
-            ], 200);
-        } else {
-            return response()->json([
-                'success' => false,
-                'message' => 'OTP sending failed',
-            ], 500);
-        }
+        return $this->respondWithToken($token);
+
     }
 
     public function verify_otp(Request $request)
@@ -103,8 +94,10 @@ class AuthController extends Controller
     public function me()
     {
         return response()->json(
-            ['success' => true,
-                'user' => $this->guard()->user()]
+            [
+                'success' => true,
+                'user' => $this->guard()->user(),
+            ]
 
         );
     }
