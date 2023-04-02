@@ -16,11 +16,11 @@ class DatabaseSeeder extends Seeder
     {
         $admin = new User();
         $admin->name = 'Admin';
-        $admin->email = 'admin@cookies';
-        $admin->password = bcrypt('cookies');
+        $admin->email = 'admin@cookiestreaming.com';
+        $admin->password = bcrypt('cookies@1234');
         $admin->save();
 
-        $cookies = [25, 60, 90, 120, 300, 600, 1200, 3000];
+        $cookies = [90, 120, 300, 600, 1200, 3000];
 
         foreach ($cookies as $cookie) {
             CookiePackage::create([
