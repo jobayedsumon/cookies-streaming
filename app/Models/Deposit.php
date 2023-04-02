@@ -10,8 +10,15 @@ class Deposit extends Model
     use HasFactory;
     protected $guarded = [];
 
+    protected $appends = ['type'];
+
     public function customer()
     {
         return $this->belongsTo(Customer::class);
+    }
+
+    public function getTypeAttribute()
+    {
+        return 1;
     }
 }
