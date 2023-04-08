@@ -10,7 +10,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <section class="pageContent" style="{{ request()->get('webView') ? 'margin-top: 5rem': '' }}">
+                <section class="pageContent" style="{{ request()->get('webView') ? 'margin-top: 3rem': '' }}">
                     <h1 class="text-center fw-bold">Privacy Policy</h1>
                     <p>This Privacy Policy describes Our policies and procedures on the collection, use and disclosure
                         of Your information when You use the Service and tells You about Your privacy rights and how the
