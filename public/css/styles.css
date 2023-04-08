@@ -659,13 +659,13 @@ header .big strong b{
 
 header figure:nth-child(1){
     position:absolute;
-    right:37%;
+    right:50%;
     top:2.5rem;
 }
 
 header figure:nth-child(2){
     position: absolute;
-    right: 3%;
+    right: 15%;
     padding: 0;
     margin: 0;
     top: 4%;
@@ -826,6 +826,10 @@ header article p{
 
 .division_1 li p{
     font-size:11px;
+}
+
+.division_1 .flex_content:first-child figure {
+    margin-right: 5rem;
 }
 
 @media (max-width:920px){

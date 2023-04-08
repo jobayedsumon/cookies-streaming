@@ -7,7 +7,7 @@
 
     <!--HEADER-->
     <header class="flex">
-        <section class="flex_content">
+        <section class="flex_content text-center">
             <article>
                 <h1 class="cursive big">Skip the queue<br><strong class="title">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Get it <b>today!</b></strong></h1>
                 <p class="mt-4">Convert Your Play Balance into real Cash</p>
@@ -26,7 +26,7 @@
         <!--division_1-->
         <div class="divisions division_1 flex">
             <section class="flex_content text-end">
-                <figure class="mt-5"><img src="{{ asset('img/login.png') }}" alt="" loading="lazy" class="img-fluid" style="height: 500px" /></figure>
+                <figure class="mt-5"><img src="{{ asset('img/login.png') }}" alt="" loading="lazy" class="img-fluid" style="height: 500px; object-fit: contain" /></figure>
             </section>
             <section class="flex_content padding_2x">
                 <em class="cursive">How it works?</em>
@@ -41,7 +41,7 @@
         <!--division_3-->
         <div class="divisions division_3">
             <article class="flex align-items-center">
-                <section class="flex_content">
+                <section class="flex_content padding_2x">
                     <figure class="m-0"><img src="{{ asset('img/store.png') }}" alt="" loading="lazy" class="img-fluid"  /></figure>
                 </section>
                 <section class="flex_content appDownload">
