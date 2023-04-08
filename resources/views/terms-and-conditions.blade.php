@@ -2,13 +2,15 @@
 
 @section('content')
 
-    @include('includes.header')
+    @if(!request()->get('webView'))
+        @include('includes.header')
+    @endif
 
 
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <section class="pageContent">
+                <section class="pageContent" style="{{ request()->get('webView') ? 'margin-top: 5rem': '' }}">
                     <h1 class="text-center fw-bold">Terms & Conditions</h1>
 
                     <p>These Terms and Conditions (Terms) is legal agreement between ‘Cookie’ and user or you.</p>
@@ -55,7 +57,9 @@
     </div>
 
 
-    @include('includes.footer')
+    @if(!request()->get('webView'))
+        @include('includes.footer')
+    @endif
 
 @endsection
 

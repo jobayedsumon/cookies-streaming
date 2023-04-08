@@ -28,6 +28,7 @@
 
 @yield('content')
 
+@if(!request()->get('webView'))
 <!--ADDITIONAL-->
 <div class="overlay"></div>
 <section class="social_icons">
@@ -42,6 +43,7 @@
         <h3>Play Store</h3>
     </strong>
 </a>
+@endif
 
 
 <!--PLUGIN-->

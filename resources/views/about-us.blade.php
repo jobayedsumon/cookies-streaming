@@ -2,14 +2,15 @@
 
 @section('content')
 
-
+@if(!request()->get('webView'))
     @include('includes.header')
+@endif
 
 
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <section class="pageContent">
+                <section class="pageContent" style="{{ request()->get('webView') ? 'margin-top: 5rem': '' }}">
                     <h1 class="text-center fw-bold">About Us</h1>
                     <h6 class="fw-bold text-center">Convert Your Play Balance into real Cash</h6>
                     <p>Cookie is an app Developed for those Users who want to Convert their Google play balance into Real Cash.</p>
@@ -101,7 +102,9 @@
     </div>
 
 
+@if(!request()->get('webView'))
     @include('includes.footer')
+@endif
 
 @endsection
 
