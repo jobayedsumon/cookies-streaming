@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Tymon\JWTAuth\Contracts\JWTSubject;
@@ -13,7 +14,7 @@ class Customer extends Authenticatable implements JWTSubject
 
     protected $guarded = [];
 
-    protected $appends = ['balance'];
+    protected $appends = ['balance', 'name'];
 
     public function getJWTIdentifier()
     {
@@ -46,5 +47,10 @@ class Customer extends Authenticatable implements JWTSubject
     public function getBalanceAttribute()
     {
         return $this->balance();
+    }
+
+    public function getNameAttribute()
+    {
+        return $this->attributes['name'] ?? 'N/A';
     }
 }
