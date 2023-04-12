@@ -32,7 +32,7 @@ Route::group([
 
 Route::group([
 
-    'middleware' => 'api',
+    'middleware' => 'auth',
     'namespace' => 'App\Http\Controllers',
     'prefix' => 'customer'
 
@@ -44,19 +44,7 @@ Route::group([
 
 Route::group([
 
-    'middleware' => 'api',
-    'namespace' => 'App\Http\Controllers',
-    'prefix' => 'cookie'
-
-], function ($router) {
-
-    Route::get('packages', 'CookieController@packages');
-
-});
-
-Route::group([
-
-    'middleware' => 'api',
+    'middleware' => 'auth',
     'namespace' => 'App\Http\Controllers',
     'prefix' => 'transaction'
 

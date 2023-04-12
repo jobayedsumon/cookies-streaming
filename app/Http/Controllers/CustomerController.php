@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 
 class CustomerController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth:api');
+    }
     public function update(Request $request)
     {
         $customer = auth('api')->user();
