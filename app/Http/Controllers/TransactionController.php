@@ -51,13 +51,13 @@ class TransactionController extends Controller
         $deposit->purchase_id = $purchase_id;
         $deposit->purchase_token = $purchase_token;
         $deposit->cookies = $cookies;
-        $deposit->status = 1;
+        $deposit->status = 4;
 
         $deposit->save();
 
         return response()->json([
             'success' => true,
-            'message' => 'Deposit initiated successfully, please wait for confirmation',
+            'message' => 'Deposit completed successfully',
             'deposit' => $deposit,
         ], 200);
     }
