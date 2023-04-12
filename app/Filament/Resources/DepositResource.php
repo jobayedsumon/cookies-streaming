@@ -59,8 +59,9 @@ class DepositResource extends Resource
                     ->dateTime(),
             ])
             ->filters([
-                //
+
             ])
+            ->defaultSort('created_at', 'desc')
             ->actions([
                 Tables\Actions\EditAction::make(),
             ])
