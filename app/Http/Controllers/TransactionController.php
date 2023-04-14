@@ -63,6 +63,7 @@ class TransactionController extends Controller
             'success' => true,
             'message' => 'Deposit completed successfully',
             'deposit' => $deposit,
+            'balance' => $customer->balance(),
         ], 200);
     }
 
