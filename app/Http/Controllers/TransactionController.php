@@ -32,6 +32,7 @@ class TransactionController extends Controller
             'message' => 'Transactions fetched successfully',
             'transactions' => $transactions,
             'total_withdrawal' => $total_withdrawal,
+            'balance' => $customer->balance(),
         ], 200);
     }
     public function deposit(Request $request)
