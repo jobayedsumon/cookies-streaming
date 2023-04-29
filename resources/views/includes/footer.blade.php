@@ -12,6 +12,7 @@
         <a href="{{ route('about-us') }}">About Us</a>
         <a href="{{ route('privacy-policy') }}">Privacy Policy</a>
         <a href="{{ route('terms-and-conditions') }}">Terms & Conditions</a>
+        <a href="{{ route('contact-us') }}">Contact Us</a>
     </section>
     <section class="flex">
         <p>© Copyright {{ date('Y') }} || All Rights Reserved || Cookie Streaming</p>

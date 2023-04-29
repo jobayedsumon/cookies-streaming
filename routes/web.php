@@ -18,4 +18,5 @@ Route::get('/', [FrontendController::class, 'home'])->name('home');
 Route::get('/about-us', [FrontendController::class, 'aboutUs'])->name('about-us');
 Route::get('/privacy-policy', [FrontendController::class, 'privacyPolicy'])->name('privacy-policy');
 Route::get('/terms-and-conditions', [FrontendController::class, 'termsAndConditions'])->name('terms-and-conditions');
+Route::get('/contact-us', [FrontendController::class, 'contactUs'])->name('contact-us');
 

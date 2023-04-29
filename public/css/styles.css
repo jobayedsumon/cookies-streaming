@@ -258,7 +258,7 @@ nav{
 
 .logo img{
     width:160px;
-    margin-right:5px;
+    margin-left: -10px;
 }
 
 .logo em{
@@ -269,6 +269,14 @@ nav{
     font-size:12px;
     position:relative;
     top:5px;
+}
+
+.contactUs {
+    color: #ff0000;
+}
+
+.contactUs:hover {
+    color: #000;
 }
 
 nav .ham{

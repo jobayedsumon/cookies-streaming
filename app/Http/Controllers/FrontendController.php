@@ -25,4 +25,9 @@ class FrontendController extends Controller
     {
         return view('terms-and-conditions');
     }
+
+    public function contactUs()
+    {
+        return view('contact-us');
+    }
 }

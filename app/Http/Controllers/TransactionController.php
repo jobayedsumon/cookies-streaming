@@ -17,20 +17,15 @@ class TransactionController extends Controller
     {
         $customer = auth('api')->user();
 
-        $deposits = $customer->deposits()->get();
-        $withdrawals = $customer->withdrawals()->get();
+        $deposits = $customer->deposits()->orderBy('created_at', 'desc')->get();
+        $withdrawals = $customer->withdrawals()->orderBy('created_at', 'desc')->get();
         $total_withdrawal = $customer->withdrawals()->where('status', 4)->sum('cookies');
-
-        $transactions = array_merge($deposits->toArray(), $withdrawals->toArray());
-
-        usort($transactions, function($a, $b) {
-            return strcmp($b['created_at'], $a['created_at']);
-        });
 
         return response()->json([
             'success' => true,
             'message' => 'Transactions fetched successfully',
-            'transactions' => $transactions,
+            'deposits' => $deposits,
+            'withdrawals' => $withdrawals,
             'total_withdrawal' => $total_withdrawal,
             'balance' => $customer->balance(),
         ], 200);
