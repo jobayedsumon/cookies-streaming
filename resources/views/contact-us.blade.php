@@ -48,7 +48,7 @@
                                         <i class="fa fa-whatsapp fa-2x me-3"></i>
                                         <div>
                                             <h5>WhatsApp</h5>
-                                            <p><a target="_blank" href="https://chat.whatsapp.com/BauvDNKzsxSCynYjn18Kb0" class="contactUs">Join Our Group</a></p>
+                                            <p><a href="https://chat.whatsapp.com/BauvDNKzsxSCynYjn18Kb0" class="contactUs">Join Our Group</a></p>
                                         </div>
                                     </div>
                                 </li>
@@ -57,7 +57,7 @@
                                         <i class="fa fa-telegram fa-2x me-3"></i>
                                         <div>
                                             <h5>Telegram</h5>
-                                            <p><a target="_blank" href="https://t.me/cookieredeem" class="contactUs">Join Our Channel</a></p>
+                                            <p><a href="https://t.me/cookieredeem" class="contactUs">Join Our Channel</a></p>
                                         </div>
                                     </div>
                                 </li>
