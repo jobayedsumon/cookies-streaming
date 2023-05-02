@@ -94,6 +94,7 @@ class TransactionController extends Controller
             'success' => true,
             'message' => 'Withdrawal initiated successfully, please wait for confirmation',
             'withdrawal' => $withdrawal,
+            'balance' => $customer->balance(),
         ], 200);
     }
 }
