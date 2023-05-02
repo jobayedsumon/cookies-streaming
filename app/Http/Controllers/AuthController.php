@@ -36,16 +36,15 @@ class AuthController extends Controller
         $customer = Customer::where('uuid', $uuid)->orWhere('email', $email)->first();
 
         if (!$customer) {
-
             $customer = new Customer();
-
-            $customer->name = $name;
-            $customer->uuid = $uuid;
-            $customer->email = $email;
-            $customer->image = $image;
-
-            $customer->save();
         }
+
+        $customer->name = $name;
+        $customer->email = $email;
+        $customer->uuid = $uuid;
+        $customer->image = $image;
+
+        $customer->save();
 
         $token = $this->guard()->login($customer);
 
