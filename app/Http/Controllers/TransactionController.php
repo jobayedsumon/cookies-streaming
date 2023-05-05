@@ -43,7 +43,7 @@ class TransactionController extends Controller
             return response()->json([
                 'success' => false,
                 'message' => 'Invalid purchase',
-            ], 400);
+            ], 200);
         }
 
         $deposit = new Deposit();

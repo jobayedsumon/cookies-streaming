@@ -39,6 +39,7 @@ Route::group([
 ], function ($router) {
 
     Route::post('update', 'CustomerController@update');
+    Route::post('reward', 'CustomerController@reward');
 
 });
 
