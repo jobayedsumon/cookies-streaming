@@ -46,7 +46,7 @@ class WithdrawalNotification extends Notification
                     ->subject('Withdrawal ' . $status . ' - Cookie')
                     ->line('This is a notification email from Cookie - reward converter to inform you about your withdrawal request.')
                     ->line($html_string)
-                    ->line('Your total withdrawal amount amount was: $' . $amount)
+                    ->line('Your total withdrawal amount was: $' . $amount)
                     ->line('Thank you for using Cookie - reward converter!');
     }
 
