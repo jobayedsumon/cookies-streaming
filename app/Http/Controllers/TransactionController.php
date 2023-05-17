@@ -34,6 +34,7 @@ class TransactionController extends Controller
     {
         $customer = auth('api')->user();
         $cookies = $request->get('cookies');
+        $quantity = $request->get('quantity') ?? 1;
         $purchase_id = $request->get('purchase_id');
         $purchase_token = $request->get('purchase_token');
 
@@ -50,7 +51,7 @@ class TransactionController extends Controller
         $deposit->customer_id = $customer->id;
         $deposit->purchase_id = $purchase_id;
         $deposit->purchase_token = $purchase_token;
-        $deposit->cookies = $cookies;
+        $deposit->cookies = $cookies * $quantity;
         $deposit->status = 4;
 
         $deposit->save();
