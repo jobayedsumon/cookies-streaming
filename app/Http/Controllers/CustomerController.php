@@ -28,9 +28,9 @@ class CustomerController extends Controller
     {
         $customer = auth('api')->user();
 
-        $placement_id = $request->get('placement_id');
+        $project_id = $request->get('project_id');
 
-        if ($placement_id == env('REWARDED_VIDEO_AD_PLACEMENT_ID')) {
+        if ($project_id == env('PROJECT_ID')) {
 
             $cookies = rand(1, 5);
             $last_deposit_id = $customer->deposits()->orderBy('id', 'desc')->first()->id;
