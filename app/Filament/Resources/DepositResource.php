@@ -47,19 +47,21 @@ class DepositResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('customer.name')
+                Tables\Columns\TextColumn::make('customer.name')->sortable()->searchable()
                     ->label('Customer'),
-                Tables\Columns\TextColumn::make('purchase_id'),
-                Tables\Columns\TextColumn::make('cookies'),
-                Tables\Columns\TextColumn::make('status')
+                Tables\Columns\TextColumn::make('purchase_id')->sortable()->searchable(),
+                Tables\Columns\TextColumn::make('purchase_token')->sortable()->searchable(),
+                Tables\Columns\TextColumn::make('cookies')->sortable(),
+                Tables\Columns\TextColumn::make('status')->sortable()
                     ->enum(config('constants.transaction_status')),
-                Tables\Columns\TextColumn::make('created_at')
+                Tables\Columns\TextColumn::make('created_at')->sortable()
                     ->dateTime(),
                 Tables\Columns\TextColumn::make('updated_at')
                     ->dateTime(),
             ])
             ->filters([
-
+                'status' => Tables\Filters\SelectFilter::make('status')
+                    ->options(config('constants.transaction_status')),
             ])
             ->defaultSort('created_at', 'desc')
             ->actions([

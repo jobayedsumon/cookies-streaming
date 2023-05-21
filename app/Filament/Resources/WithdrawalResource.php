@@ -49,22 +49,23 @@ class WithdrawalResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('customer.name')
+                Tables\Columns\TextColumn::make('customer.name')->sortable()->searchable()
                     ->label('Customer'),
-                Tables\Columns\TextColumn::make('payout_method')
+                Tables\Columns\TextColumn::make('payout_method')->sortable()->searchable()
                     ->enum(config('constants.payout_method')),
-                Tables\Columns\TextColumn::make('payout_id'),
-                Tables\Columns\TextColumn::make('beneficiary_name'),
-                Tables\Columns\TextColumn::make('cookies'),
+                Tables\Columns\TextColumn::make('payout_id')->sortable()->searchable(),
+                Tables\Columns\TextColumn::make('beneficiary_name')->sortable()->searchable(),
+                Tables\Columns\TextColumn::make('cookies')->sortable(),
                 Tables\Columns\TextColumn::make('status')
-                    ->enum(config('constants.transaction_status')),
-                Tables\Columns\TextColumn::make('created_at')
+                    ->enum(config('constants.transaction_status'))->sortable(),
+                Tables\Columns\TextColumn::make('created_at')->sortable()
                     ->dateTime(),
                 Tables\Columns\TextColumn::make('updated_at')
                     ->dateTime(),
             ])
             ->filters([
-                //
+                'status' => Tables\Filters\SelectFilter::make('status')
+                    ->options(config('constants.transaction_status')),
             ])
             ->defaultSort('created_at', 'desc')
             ->actions([

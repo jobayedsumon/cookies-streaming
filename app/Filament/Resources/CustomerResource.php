@@ -5,6 +5,7 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\CustomerResource\Pages;
 use App\Filament\Resources\CustomerResource\RelationManagers;
 use App\Models\Customer;
+use Doctrine\DBAL\Query\QueryBuilder;
 use Filament\Forms;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
@@ -50,17 +51,18 @@ class CustomerResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('uuid'),
-                Tables\Columns\TextColumn::make('email'),
-                Tables\Columns\TextColumn::make('name'),
+                Tables\Columns\TextColumn::make('uuid')->sortable()->searchable(),
+                Tables\Columns\TextColumn::make('email')->sortable()->searchable(),
+                Tables\Columns\TextColumn::make('name')->sortable()->searchable(),
                 Tables\Columns\ImageColumn::make('image'),
-                Tables\Columns\TextColumn::make('phone_number'),
+                Tables\Columns\TextColumn::make('phone_number')->searchable(),
                 Tables\Columns\TextColumn::make('payout_method')->enum(
                     config('constants.payout_method')
-                ),
+                )->sortable()->searchable(),
                 Tables\Columns\TextColumn::make('beneficiary_name'),
                 Tables\Columns\TextColumn::make('payout_id'),
-                Tables\Columns\TextColumn::make('created_at')
+                Tables\Columns\TextColumn::make('balance'),
+                Tables\Columns\TextColumn::make('created_at')->sortable()
                     ->dateTime(),
                 Tables\Columns\TextColumn::make('updated_at')
                     ->dateTime(),
