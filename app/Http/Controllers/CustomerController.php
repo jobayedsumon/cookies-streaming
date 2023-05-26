@@ -32,7 +32,7 @@ class CustomerController extends Controller
 
         if ($project_id == env('PROJECT_ID')) {
 
-            $cookies = rand(1, 5);
+            $cookies = rand(1, 5) / 10;
             $last_deposit_id = $customer->deposits()->orderBy('id', 'desc')->first()->id;
 
             $data = [
