@@ -97,7 +97,7 @@ class AuthController extends Controller
             [
                 'success' => true,
                 'user' => $this->guard()->user(),
-                'currency' => Setting::where('key', 'usd_to_bdt')->first(),
+                'usd_to_bdt' => @Setting::where('key', 'usd_to_bdt')->first()->value,
             ]
 
         );
