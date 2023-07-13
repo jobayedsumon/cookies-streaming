@@ -17,5 +17,7 @@ return [
     'payout_method' => [
         1 => 'Paypal',
         2 => 'Tether (USDT) - Binance.com',
+        3 => 'Bkash',
+        4 => 'Nagad',
     ],
 ];

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Customer;
+use App\Models\Setting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
@@ -96,6 +97,7 @@ class AuthController extends Controller
             [
                 'success' => true,
                 'user' => $this->guard()->user(),
+                'currency' => Setting::where('key', 'usd_to_bdt')->first(),
             ]
 
         );

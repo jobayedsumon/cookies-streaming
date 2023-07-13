@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Setting;
 use Illuminate\Http\Request;
 
 class FrontendController extends Controller
@@ -29,5 +30,25 @@ class FrontendController extends Controller
     public function contactUs()
     {
         return view('contact-us');
+    }
+
+    public function settings(Request $request)
+    {
+        $data = $request->except('_token');
+
+        foreach ($data as $key => $value) {
+            $setting = Setting::where('key', $key)->first();
+            if ($setting) {
+                $setting->value = $value;
+            } else {
+                $setting = Setting::create([
+                    'key' => $key,
+                    'value' => $value,
+                ]);
+            }
+            $setting->save();
+        }
+
+        return back()->with('success', 'Settings updated successfully!');
     }
 }
