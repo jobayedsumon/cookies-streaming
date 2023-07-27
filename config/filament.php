@@ -141,7 +141,7 @@ return [
         'register' => [
 //            Widgets\AccountWidget::class,
 //            Widgets\FilamentInfoWidget::class,
-        \App\Filament\Widgets\CurrencyWidget::class
+        \App\Filament\Widgets\DashboardWidget::class
         ],
     ],
 

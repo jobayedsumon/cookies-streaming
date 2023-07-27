@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Deposit;
+use App\Models\Setting;
 use App\Models\Withdrawal;
 use Illuminate\Http\Request;
 
@@ -51,7 +52,17 @@ class TransactionController extends Controller
         $deposit->customer_id = $customer->id;
         $deposit->purchase_id = $purchase_id;
         $deposit->purchase_token = $purchase_token;
-        $deposit->cookies = $cookies * $quantity;
+
+        $total_cookies = $cookies * $quantity;
+
+        $bonus = Setting::where('key', 'bonus')->first();
+
+        if ($bonus && $bonus->value > 0) {
+            $total_cookies += $total_cookies * $bonus->value / 100;
+        }
+
+        $deposit->cookies = $total_cookies;
+
         $deposit->status = 4;
 
         $deposit->save();
