@@ -137,7 +137,7 @@ class AuthController extends Controller
     protected function respondWithToken($token)
     {
         $balance = $this->guard()->user()->balance();
-        $settings = Setting::all();
+        $settings = Setting::select('key', 'value')->get();
 
         return response()->json([
             'success' => true,
