@@ -97,7 +97,6 @@ class AuthController extends Controller
             [
                 'success' => true,
                 'user' => $this->guard()->user(),
-                'usd_to_bdt' => @Setting::where('key', 'usd_to_bdt')->first()->value,
             ]
 
         );
@@ -138,13 +137,13 @@ class AuthController extends Controller
     protected function respondWithToken($token)
     {
         $balance = $this->guard()->user()->balance();
+        $settings = Setting::all();
 
         return response()->json([
             'success' => true,
             'access_token' => $token,
             'balance' => $balance,
-//            'token_type' => 'bearer',
-//            'expires_in' => $this->guard()->factory()->getTTL() * 60,
+            'settings' => $settings,
         ], 200);
     }
 
