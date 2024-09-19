@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Cookie Streaming</title>
+    <title>Rewards Converter Global</title>
 
-    <link rel="icon" href="{{ asset('img/CookieLogoWhite.jpg') }}" />
+    <link rel="icon" href="{{ asset('img/logo.png') }}" />
 
     <meta charset="UTF-8" />
     <meta name="language" content="en-US" />
@@ -36,7 +36,7 @@
     <a href="#" title="Instagram"><i class="fa fa-instagram"></i></a>
     <a href="#" title="Twitter"><i class="fa fa-twitter"></i></a>
 </section>
-<a href="https://play.google.com/store/apps/details?id=com.cookies.streaming" class="google_play fixed_flex" title="Play store">
+<a href="https://play.google.com/store/apps/details?id=online.rewardsconverter.global" class="google_play fixed_flex" title="Play store">
     <img src="https://i.postimg.cc/sgXYMXYR/g-play.png" alt="" />
     <strong>
         <h6>Download now on</h6>

@@ -30,7 +30,7 @@
                                         <i class="fa fa-envelope fa-2x me-3"></i>
                                         <div>
                                             <h5>Email</h5>
-                                            <p><a href="mailto:cookieredeem@gmail.com" class="contactUs">cookieredeem@gmail.com</a></p>
+                                            <p><a href="mailto:rewardsconverter0@gmail.com" class="contactUs">rewardsconverter0@gmail.com</a></p>
                                         </div>
                                     </div>
                                 </li>
@@ -57,7 +57,7 @@
                                         <i class="fa fa-telegram fa-2x me-3"></i>
                                         <div>
                                             <h5>Telegram</h5>
-                                            <p><a href="https://t.me/cookieredeem" class="contactUs">Join Our Channel</a></p>
+                                            <p><a href="https://t.me/rewardsconverterglobal" class="contactUs">Join Our Channel</a></p>
                                         </div>
                                     </div>
                                 </li>

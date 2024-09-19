@@ -34,7 +34,7 @@ class DepositResource extends Resource
                 Forms\Components\TextInput::make('purchase_token')
                     ->required()
                     ->maxLength(255),
-                Forms\Components\TextInput::make('cookies')
+                Forms\Components\TextInput::make('rewards')
                     ->numeric()
                     ->required(),
                 Forms\Components\Select::make('status')
@@ -51,7 +51,7 @@ class DepositResource extends Resource
                     ->label('Customer'),
                 Tables\Columns\TextColumn::make('purchase_id')->sortable()->searchable(),
                 Tables\Columns\TextColumn::make('purchase_token')->sortable()->searchable(),
-                Tables\Columns\TextColumn::make('cookies')->sortable(),
+                Tables\Columns\TextColumn::make('rewards')->sortable(),
                 Tables\Columns\TextColumn::make('status')->sortable()
                     ->enum(config('constants.transaction_status')),
                 Tables\Columns\TextColumn::make('created_at')->sortable()

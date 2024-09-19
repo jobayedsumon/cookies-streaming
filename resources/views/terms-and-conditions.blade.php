@@ -13,24 +13,24 @@
                 <section class="pageContent" style="{{ request()->get('webView') ? 'margin-top: 3rem': '' }}">
                     <h1 class="text-center fw-bold">Terms & Conditions</h1>
 
-                    <p>These Terms and Conditions (Terms) is legal agreement between ‘Cookie’ and user or you.</p>
-                    <p>‘User‘ or ‘You‘ means any person who accesses, avails or uses this website or the app of ‘Cookie’ for the purpose of transacting, sharing information, displaying information. By accessing the site, app or service, You agree to be bound by these Terms. You hereby represent and warrant to ‘Cookie’ that you are at least 13 years old or above. While individuals are under 13 years can avail services with the guidance of their guardians/parents.</p>
-                    <p>‘Cookie’ reserve right to change, modify, add, remove portions of these Terms at any time by posting the amended Terms. Please check this page periodically for changes. If you do not wish to accept this Terms, please do not use this site and our application.</p>
+                    <p>These Terms and Conditions (Terms) is legal agreement between ‘Rewards Converter Global’ and user or you.</p>
+                    <p>‘User‘ or ‘You‘ means any person who accesses, avails or uses this website or the app of ‘Rewards Converter Global’ for the purpose of transacting, sharing information, displaying information. By accessing the site, app or service, You agree to be bound by these Terms. You hereby represent and warrant to ‘Rewards Converter Global’ that you are at least 13 years old or above. While individuals are under 13 years can avail services with the guidance of their guardians/parents.</p>
+                    <p>‘Rewards Converter Global’ reserve right to change, modify, add, remove portions of these Terms at any time by posting the amended Terms. Please check this page periodically for changes. If you do not wish to accept this Terms, please do not use this site and our application.</p>
 
                     <h2>ELECTRONIC COMMUNICATION</h2>
                     <p>When you access our website or send emails to us, you are communicating with us electronically, and you give your consent to receive communication from us electronically.</p>
 
                     <h2>LICENSE</h2>
-                    <p>General: ‘Cookie’ grants you a limited licence to use this website and app for personal use and not to download (other than page caching) or modify it, or any portion of it, except with express written consent from ‘Cookie’.</p>
+                    <p>General: ‘Rewards Converter Global’ grants you a limited licence to use this website and app for personal use and not to download (other than page caching) or modify it, or any portion of it, except with express written consent from ‘Rewards Converter Global’.</p>
                     <p>Restrictions for app:</p>
                     <ul>
-                        <li>You can’t download ‘Cookie’ outside of Google Play Store. If you download from the outside of Google Play Store, we will be not responsible for your privacy.</li>
+                        <li>You can’t download ‘Rewards Converter Global’ outside of Google Play Store. If you download from the outside of Google Play Store, we will be not responsible for your privacy.</li>
                         <li>You can’t modify our application and you will not try to extract the source code of our application.</li>
                     </ul>
 
                     <h2>ACCOUNT OF USER</h2>
                     <ul>
-                        <li>User need to have valid email to create an account with ‘Cookie'</li>
+                        <li>User need to have valid email to create an account with ‘Rewards Converter Global'</li>
                         <li>Using wrong information for your account, will lead termination or suspension of your account.</li>
                         <li>We may ask you to verify your identity to make the platform safe and secure.</li>
                         <li>You can open only one account with us. Opening multiple accounts will lead termination or suspension of your account.</li>

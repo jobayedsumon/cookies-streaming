@@ -24,7 +24,7 @@ class AppServiceProvider extends ServiceProvider
         Filament::registerNavigationGroups([
             'Users',
             'Customers',
-            'Cookie Packages',
+            'Rewards Packages',
             'Transactions',
         ]);
 

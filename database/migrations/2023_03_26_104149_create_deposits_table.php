@@ -17,7 +17,7 @@ return new class extends Migration
             $table->foreign('customer_id')->references('id')->on('customers');
             $table->string('purchase_id')->unique();
             $table->string('purchase_token')->unique();
-            $table->unsignedDouble('cookies');
+            $table->unsignedDouble('rewards');
             $table->unsignedInteger('status')->default(1);
             $table->timestamps();
         });

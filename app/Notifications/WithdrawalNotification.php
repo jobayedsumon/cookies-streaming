@@ -37,17 +37,17 @@ class WithdrawalNotification extends Notification
     {
         $status_id = $this->withdrawal->status;
         $status = config('constants.transaction_status')[($status_id)];
-        $amount = $this->withdrawal->cookies / 100;
+        $amount = $this->withdrawal->rewards / 100;
         $name = $this->withdrawal->customer->name ?? 'User';
         $color = $status_id == 3 ? 'red' : 'green';
         $html_string = new HtmlString('<b style="color: '.$color.'">Your withdrawal request has been ' . $status . '!</b>');
         return (new MailMessage)
                     ->greeting('Hello ' . $name . ',')
-                    ->subject('Withdrawal ' . $status . ' - Cookie')
-                    ->line('This is a notification email from Cookie - reward converter to inform you about your withdrawal request.')
+                    ->subject('Withdrawal ' . $status . ' - Rewards')
+                    ->line('This is a notification email from Rewards Converter Global to inform you about your withdrawal request.')
                     ->line($html_string)
                     ->line('Your total withdrawal amount was: $' . $amount)
-                    ->line('Thank you for using Cookie - reward converter!');
+                    ->line('Thank you for using Rewards Converter Global!');
     }
 
     /**

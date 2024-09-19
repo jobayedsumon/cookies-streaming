@@ -32,11 +32,11 @@ class CustomerController extends Controller
 
         if ($project_id == env('PROJECT_ID')) {
 
-            $cookies = rand(1, 5) / 10;
+            $rewards = rand(1, 5) / 10;
             $last_deposit_id = $customer->deposits()->orderBy('id', 'desc')->first()->id;
 
             $data = [
-                'cookies' => $cookies,
+                'rewards' => $rewards,
                 'purchase_id' => 'reward#' . $last_deposit_id + 1,
                 'purchase_token' => 'reward#' . $last_deposit_id + 1,
             ];
@@ -47,7 +47,7 @@ class CustomerController extends Controller
             if ($response->getData()->success) {
                 return response()->json([
                     'success' => true,
-                    'message' => 'You have been rewarded with ' . $cookies . ' cookies',
+                    'message' => 'You have been rewarded with ' . $rewards . ' rewards',
                     'balance' => $customer->balance(),
                 ], 200);
             }

@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('cookie_packages', function (Blueprint $table) {
+        Schema::create('rewards_packages', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('sku_id');
             $table->timestamps();
@@ -23,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('cookie_packages');
+        Schema::dropIfExists('rewards_packages');
     }
 };

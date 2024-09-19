@@ -36,7 +36,7 @@ class WithdrawalResource extends Resource
                 Forms\Components\TextInput::make('beneficiary_name')
                     ->required()
                     ->maxLength(255),
-                Forms\Components\TextInput::make('cookies')
+                Forms\Components\TextInput::make('rewards')
                     ->numeric()
                     ->required(),
                 Forms\Components\Select::make('status')
@@ -55,7 +55,7 @@ class WithdrawalResource extends Resource
                     ->enum(config('constants.payout_method')),
                 Tables\Columns\TextColumn::make('payout_id')->sortable()->searchable(),
                 Tables\Columns\TextColumn::make('beneficiary_name')->sortable()->searchable(),
-                Tables\Columns\TextColumn::make('cookies')->sortable(),
+                Tables\Columns\TextColumn::make('rewards')->sortable(),
                 Tables\Columns\TextColumn::make('status')
                     ->enum(config('constants.transaction_status'))->sortable(),
                 Tables\Columns\TextColumn::make('created_at')->sortable()

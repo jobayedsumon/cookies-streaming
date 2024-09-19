@@ -15,7 +15,7 @@
         <a href="{{ route('contact-us') }}">Contact Us</a>
     </section>
     <section class="flex">
-        <p>© Copyright {{ date('Y') }} || All Rights Reserved || Cookie Streaming</p>
+        <p>© Copyright {{ date('Y') }} || All Rights Reserved || Rewards Converter Global</p>
     </section>
 </footer>
 

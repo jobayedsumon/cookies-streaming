@@ -36,10 +36,10 @@
                             managing authority.
                         </li>
                         <li><strong>Application</strong> means the software program provided by the Company downloaded
-                            by You on any electronic device, named Cookie Streaming.
+                            by You on any electronic device, named Rewards Converter Global.
                         </li>
                         <li><strong>Company</strong> (referred to as either “the Company”, “We”, “Us” or “Our” in this
-                            Agreement) refers to Cookie Streaming.
+                            Agreement) refers to Rewards Converter Global.
                         </li>
                         <li><strong>Country</strong> refers to Rajasthan, India.</li>
                         <li><strong>Device</strong> means any device that can access the Service such as a computer, a
@@ -120,7 +120,7 @@
                     <h2>Contact Us</h2>
                     <p>If you have any questions about this Privacy Policy, You can contact us:</p>
                     <ul>
-                        <li>By email: cookiestreamingservices@gmail.com</li>
+                        <li>By email: rewardsconverter0@gmail.com</li>
                     </ul>
 
                 </section>

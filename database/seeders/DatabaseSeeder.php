@@ -3,7 +3,7 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use App\Models\CookiePackage;
+use App\Models\RewardsPackage;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 
@@ -16,15 +16,15 @@ class DatabaseSeeder extends Seeder
     {
         $admin = new User();
         $admin->name = 'Admin';
-        $admin->email = 'admin@cookiestreaming.com';
-        $admin->password = bcrypt('cookies@1234');
+        $admin->email = 'admin@rewardsconverter.online';
+        $admin->password = bcrypt('Rewards@Converter@1234');
         $admin->save();
 
-        $cookies = [90, 120, 300, 600, 1200, 3000];
+        $rewards = [25, 50, 75, 100, 125, 250, 500, 1000, 2500];
 
-        foreach ($cookies as $cookie) {
-            CookiePackage::create([
-                'sku_id' => $cookie,
+        foreach ($rewards as $reward) {
+            RewardsPackage::create([
+                'sku_id' => $reward,
             ]);
         }
     }

@@ -243,11 +243,11 @@ nav{
     width:100%;
     align-items:center;
     justify-content:space-between;
-    padding:1rem 2rem;
+    padding:0.5rem 2rem;
     z-index:11 !important;
     white-space:nowrap;
     transition:0.5s;
-    background:var(--primary);
+    background:var(--white) !important;
 }
 
 .logo{
@@ -257,7 +257,7 @@ nav{
 }
 
 .logo img{
-    width:160px;
+    width: 80px;
     margin-left: -10px;
 }
 

@@ -20,7 +20,7 @@ class TransactionController extends Controller
 
         $deposits = $customer->deposits()->orderBy('created_at', 'desc')->get();
         $withdrawals = $customer->withdrawals()->orderBy('created_at', 'desc')->get();
-        $total_withdrawal = $customer->withdrawals()->where('status', 4)->sum('cookies');
+        $total_withdrawal = $customer->withdrawals()->where('status', 4)->sum('rewards');
 
         return response()->json([
             'success' => true,
@@ -34,7 +34,7 @@ class TransactionController extends Controller
     public function deposit(Request $request)
     {
         $customer = auth('api')->user();
-        $cookies = $request->get('cookies');
+        $rewards = $request->get('rewards');
         $quantity = $request->get('quantity') ?? 1;
         $purchase_id = $request->get('purchase_id');
         $purchase_token = $request->get('purchase_token');
@@ -53,15 +53,15 @@ class TransactionController extends Controller
         $deposit->purchase_id = $purchase_id;
         $deposit->purchase_token = $purchase_token;
 
-        $total_cookies = $cookies * $quantity;
+        $total_rewards = $rewards * $quantity;
 
         $bonus = Setting::where('key', 'bonus')->first();
 
         if ($bonus && $bonus->value > 0) {
-            $total_cookies += $total_cookies * $bonus->value / 100;
+            $total_rewards += $total_rewards * $bonus->value / 100;
         }
 
-        $deposit->cookies = $total_cookies;
+        $deposit->rewards = $total_rewards;
 
         $deposit->status = 4;
 
@@ -78,14 +78,14 @@ class TransactionController extends Controller
     public function withdraw(Request $request)
     {
         $customer = auth('api')->user();
-        $cookies = $request->get('cookies');
+        $rewards = $request->get('rewards');
         $payout_method = $request->get('payout_method');
         $payout_id = $request->get('payout_id');
         $beneficiary_name = $request->get('beneficiary_name');
 
         $balance = $customer->balance();
 
-        if ($cookies > $balance) {
+        if ($rewards > $balance) {
             return response()->json([
                 'success' => false,
                 'message' => 'Insufficient balance',
@@ -94,7 +94,7 @@ class TransactionController extends Controller
 
         $withdrawal = new Withdrawal();
         $withdrawal->customer_id = $customer->id;
-        $withdrawal->cookies = $cookies;
+        $withdrawal->rewards = $rewards;
         $withdrawal->payout_method = $payout_method;
         $withdrawal->payout_id = $payout_id;
         $withdrawal->beneficiary_name = $beneficiary_name;

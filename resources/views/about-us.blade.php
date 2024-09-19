@@ -13,9 +13,9 @@
                 <section class="pageContent" style="{{ request()->get('webView') ? 'margin-top: 3rem': '' }}">
                     <h1 class="text-center fw-bold">About Us</h1>
                     <h6 class="fw-bold text-center">Convert Your Play Balance into real Cash</h6>
-                    <p>Cookie is an app Developed for those Users who want to Convert their Google play balance into Real Cash.</p>
-                    <h2>About Cookie</h2>
-                    <p>Cookie is a Reward Converter App developed by Cookie Software LLC where you can convert your Google play Balance
+                    <p>Rewards Converter Global is an app Developed for those Users who want to Convert their Google play balance into Real Cash.</p>
+                    <h2>About Rewards Converter Global</h2>
+                    <p>Rewards Converter Global is a Reward Converter App developed by Rewards Converter Global Software LLC where you can convert your Google play Balance
                         into Real Cash. User have to make  purchases in the app by selecting the amount and then he will be get coins,
                         after that they can withdraw their coins into cash by entering payout details in Withdraw page.</p>
 
@@ -26,25 +26,25 @@
                     <h3>Features</h3>
                     <ul>
                         <li>Neat & Clean UI/UX</li>
-                        <p>'Cookie' has neat & clean User Interface so new users can also understand about app's features easily.</p>
+                        <p>'Rewards Converter Global' has neat & clean User Interface so new users can also understand about app's features easily.</p>
 
                         <li>Multiple Purchasing Options</li>
-                        <p>'Cookie' offers various purchasing options.</p>
+                        <p>'Rewards Converter Global' offers various purchasing options.</p>
 
                         <li>Realtime Notifications</li>
-                        <p>'Cookie' delivers Realtime notifications so users can stay up-to-date with all apps services and features.</p>
+                        <p>'Rewards Converter Global' delivers Realtime notifications so users can stay up-to-date with all apps services and features.</p>
 
                         <li>Multiple Features</li>
-                        <p>'Cookie' has multiple essential features who makes our App useful for our Users.</p>
+                        <p>'Rewards Converter Global' has multiple essential features who makes our App useful for our Users.</p>
 
                         <li>One Tap Withdrawal</li>
-                        <p>'Cookie' has one Tap Withdrawal feature that allow to our users hassle free Withdrawals in a single click.</p>
+                        <p>'Rewards Converter Global' has one Tap Withdrawal feature that allow to our users hassle free Withdrawals in a single click.</p>
 
                         <li>24/7* Customer Support</li>
-                        <p>'Cookie' has the best ever customer support Team. You can contact us via Email, Phone Call, Whatsapp or Telegram.</p>
+                        <p>'Rewards Converter Global' has the best ever customer support Team. You can contact us via Email, Phone Call, Whatsapp or Telegram.</p>
 
                         <li>Lowest Withdrawal Processing time</li>
-                        <p>'Cookie' has the lowest withdrawal processing time (7 - 14 days). Usually we pay in 3 days but sometimes it may takes longer than usual but not more than 14 days.</p>
+                        <p>'Rewards Converter Global' has the lowest withdrawal processing time (7 - 14 days). Usually we pay in 3 days but sometimes it may takes longer than usual but not more than 14 days.</p>
                     </ul>
 
                     <h3>Frequently Asked Questions(FAQs)</h3>
@@ -79,20 +79,20 @@
                         </li>
                         <li>
                             <p><strong>Q7. How secure is my personal and payout information?</strong></p>
-                            <p>At Cookie, we take user data privacy and security very seriously. All user information is securely stored and encrypted, and we follow industry-standard practices to safeguard user information. We also do not share any personal information with any third party without the user's consent.</p>
+                            <p>At Rewards Converter Global, we take user data privacy and security very seriously. All user information is securely stored and encrypted, and we follow industry-standard practices to safeguard user information. We also do not share any personal information with any third party without the user's consent.</p>
                         </li>
                         <li>
-                            <p><strong>Q8. Is Cookie available in all countries?</strong></p>
-                            <p>Currently, Cookie is available only in a limited number of countries. You can check the list of supported countries in the app itself. We are working on expanding our reach to more countries in the future.</p>
+                            <p><strong>Q8. Is Rewards Converter Global available in all countries?</strong></p>
+                            <p>Currently, Rewards Converter Global is available only in a limited number of countries. You can check the list of supported countries in the app itself. We are working on expanding our reach to more countries in the future.</p>
                         </li>
                         <li>
-                            <p><strong>Q9. How can I contact Cookie support?</strong></p>
+                            <p><strong>Q9. How can I contact Rewards Converter Global support?</strong></p>
                             <p>You can contact our customer support team 24/7 via email, phone call, WhatsApp, or Telegram. We are always here to help you with any queries or concerns.</p>
                         </li>
                     </ol>
 
                     <h3>Conclusion</h3>
-                    <p>If you are someone who has unused Google play balance and wants to convert it into real cash, Cookie is the app for you. With its simple and easy-to-use interface, multiple purchasing options, and low service charges, Cookie makes the process of converting Google play balance into real cash hassle-free and convenient. So, download the app today and start earning real cash from your unused Google play balance!</p>
+                    <p>If you are someone who has unused Google play balance and wants to convert it into real cash, Rewards Converter Global is the app for you. With its simple and easy-to-use interface, multiple purchasing options, and low service charges, Rewards Converter Global makes the process of converting Google play balance into real cash hassle-free and convenient. So, download the app today and start earning real cash from your unused Google play balance!</p>
 
 
                 </section>

@@ -32,8 +32,8 @@
                 <em class="cursive">How it works?</em>
                 <h2 class="title big">Get it easy</h2>
                 <span class="bar"></span>
-                <p>Cookie is an app Developed for those Users who want to Convert their Google play balance into Real Cash.</p>
-                <p>Cookie is a Reward Converter App developed by Cookie Software LLC where you can convert your Google play Balance into Real Cash. User have to make  purchases in the app by selecting the amount and then he will be get coins, after that they can withdraw their coins into cash by entering payout details in Withdraw page.</p>
+                <p>Rewards Converter Global is an app Developed for those Users who want to Convert their Google play balance into Real Cash.</p>
+                <p>Rewards Converter Global is a Reward Converter App developed by Rewards Converter Global Software LLC where you can convert your Google play Balance into Real Cash. User have to make  purchases in the app by selecting the amount and then he will be get coins, after that they can withdraw their coins into cash by entering payout details in Withdraw page.</p>
                 <p>We have PayPal and Tether (USD₮ - Binance.com) as Payout Option. We take minimum service charge from our users. If any user is converting his Google play balance into cash then he will be receiving  50% - 65% (According to packages) so our service charge is less than others.</p>
             </section>
         </div>
@@ -48,7 +48,7 @@
                     <h3 class="title medium">Try our <b>app!</b></h3>
                     <p>Available on play store</p>
                     <aside class="fixed_flex">
-                        <a href="https://play.google.com/store/apps/details?id=com.cookies.streaming" class="fixed_flex">
+                        <a href="https://play.google.com/store/apps/details?id=online.rewardsconverter.global" class="fixed_flex">
                             <img src="https://i.postimg.cc/DyjTrjXb/play-store.png" alt="" />
                             <strong>
                                 <h5>GET IT ON</h5>

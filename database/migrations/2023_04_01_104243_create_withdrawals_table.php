@@ -18,7 +18,7 @@ return new class extends Migration
             $table->unsignedInteger('payout_method');
             $table->string('payout_id');
             $table->string('beneficiary_name');
-            $table->unsignedDouble('cookies');
+            $table->unsignedDouble('rewards');
             $table->unsignedInteger('status')->default(1);
             $table->timestamps();
         });
